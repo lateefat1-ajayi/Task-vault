@@ -1,0 +1,88 @@
+body{
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: black;
+    margin: 0;
+}
+.parent{
+    background-color: #666;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 20px;
+}
+span{
+    color: deeppink;
+    font-size: 19px;
+}
+
+#text-area{
+    width: 70%;
+    background-color: rgb(255, 192, 203);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+.flexs{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; 
+}
+
+.flex{
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+button{
+   background-color: deeppink;
+   border-radius: 10px; 
+   border: 1px solid black;
+   padding: 10px;
+   text-align: center;
+   transition: 0.5s linear 0.2s;
+}
+button:hover{
+    background-color: pink;
+    cursor: pointer;
+    transform: translateY(-3px);
+}
+
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 20px;
+}
+
+.light-mode{
+    background-color: #fff;
+    color: #222;
+}
+.light-mode .parent{
+    background-image: linear-gradient(#aaa, #fff);
+    color: #444;
+    border: 2px solid #333;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}

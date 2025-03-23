@@ -41,7 +41,6 @@ function addTask(task) {
     list.innerHTML = `
     <h4>${task.text}</h4> <br>
     <small> ${formatDate (task.timestamp)}</small>
-    <input type="checkbox" name="" >
     `;
 
     let dltBtn = document.createElement("button");
@@ -51,7 +50,14 @@ function addTask(task) {
         deleteTask(task.text)
     })
 
+    let checkBttn = document.createElement("button");
+    checkBttn.innerHTML = "✔️";
+    checkBttn.addEventListener("click", function (){
+         list.style.textDecoration = "line-through"
+    })
+    
     list.appendChild(dltBtn);
+    list.appendChild(checkBttn);
 
     unordered.appendChild(list);
 }

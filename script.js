@@ -49,18 +49,22 @@ function addTask(task) {
     dltBtn.addEventListener("click", function (){
         deleteTask(task.text)
     })
-
+   
+        if(task.text){
+            list.style.textDecoration = "line-through"
+        }
     let checkBttn = document.createElement("button");
     checkBttn.innerHTML = "✔️";
     checkBttn.addEventListener("click", function (){
-         list.style.textDecoration = "line-through"
+        checkTask(task.text)
     })
-    
+
     list.appendChild(dltBtn);
     list.appendChild(checkBttn);
 
     unordered.appendChild(list);
 }
+
 
 
 function deleteTask(taskText) {
@@ -69,6 +73,14 @@ function deleteTask(taskText) {
     task = task.filter((task) => task.text !== taskText)
     localStorage.setItem("task", JSON.stringify(task));
     displayTask();
+}
+
+function checkTask(taskText) {
+    let task = JSON.parse(localStorage.getItem("task")) || [];
+
+    task = task.filter((task) => task.text === taskText)
+    localStorage.setItem("task", JSON.stringify(task));
+    
 }
 
 exportTask.addEventListener("click", function () {
